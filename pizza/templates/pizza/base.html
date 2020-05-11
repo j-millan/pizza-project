@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{% static 'pizza/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'pizza/css/style.css' %}">
+		<link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
+		<title>
+			{% block title %}
+				Pizza Creator
+			{% endblock title %}
+		</title>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand">
+			<a class="navbar-brand" href="{% url 'pizza:home' %}">Pizza Creator</a>
+			<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-end" id="main-navigation">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'pizza:pizza_index' %}">Index</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'pizza:create_pizza' %}">Create</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<br>
+		<ul class="breadcrumb">
+			{% block breadcrumb %}
+			
+			{% endblock breadcrumb %}
+		</ul>
+		<div class="content">
+			{% block content %}
+			
+			{% endblock content %}
+		</div>
+		<br>
+		<div class="overlay">
+		
+		<script src="{% static 'pizza/js/jquery-3.2.1.js' %}"></script>
+        <script src="{% static 'pizza/js/popper.min.js' %}" ></script>
+        <script src="{% static 'pizza/js/bootstrap.min.js'%}"></script>
+        <script src="{% static 'pizza/js/custom.js' %}"></script>
+	</body>
+</html>

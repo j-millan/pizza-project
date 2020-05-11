@@ -1,0 +1,42 @@
+{% extends "pizza/base.html" %}
+
+{% block title %}Pizza Index{% endblock title %}
+
+{% block breadcrumb %}
+	<li class="breadcrumb-item">
+		<a href="{% url 'pizza:home' %}">Home</a>
+	</li>
+	<li class="breadcrumb-item active">Index</li>
+{% endblock breadcrumb %}
+
+{% block content %}
+	<a href="{% url 'pizza:create_pizza' %}"></a>
+	{% if pizzas %}
+		<h1>Latest Pizzas Created:</h1>
+		<div class="dropdown">
+			<button type="button" class="btn btn-dark btn-sm dropdown-toggle" data-toggle="dropdown">
+				Filter by date
+			</button>
+			<div class="dropdown-menu">
+				<a href="{% url 'pizza:index_date_filter' 1 %}" class="dropdown-item">Last day</a>
+				<a href="{% url 'pizza:index_date_filter' 7 %}" class="dropdown-item">Last week</a>
+				<a href="{% url 'pizza:index_date_filter' 30 %}" class="dropdown-item">Last 30 days</a>
+				<a href="{% url 'pizza:index_date_filter' 60 %}" class="dropdown-item">Last 60 days</a>
+				<div class="dropdown-divider"></div>
+				<a href="{% url 'pizza:pizza_index' %}" class="dropdown-item">All</a>
+			</div> 
+		</div>
+		<div class="list-group list-group-flush">
+			 {% for pizza in pizzas %}
+				<a class="list-group-item list-group-item-action" href="{% url 'pizza:pizza_details' pizza.pk %}">
+					<div class="d-flex w-100 justify-content-between">
+						<h5 class="mb-1">{{ pizza.name }}</h5>
+						<small>{{ pizza.pub_date|date:"F d, Y" }}</small>
+					</div>
+				<a>
+			 {% endfor %}
+		</div>
+	{% else %}
+		<p>{{ error_msg}}</p>
+	{% endif %}
+{% endblock content %}

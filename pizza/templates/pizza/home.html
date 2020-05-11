@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Pizza Creator</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{% static 'pizza/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'pizza/css/style.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'pizza/css/home.css' %}">
+		<link href="https://fonts.googleapis.com/css?family=Cabin+Condensed|Prompt&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="card" style="width: 18rem;">
+			<div class="card-body text-center">
+				<h5 class="card-title">Welcome to Pizza Creator!</h5>
+				<p>Where do you want to go to now?</p>
+				<a class="btn btn-primary" href="{% url 'pizza:pizza_index'%}">Pizza Index</a>
+				<a class="btn btn-primary" href="{% url 'pizza:create_pizza'%}">Create Pizza</a>
+			</div>
+		</div>
+		<div class="overlay">
+
+		<script src="{% static 'pizza/js/jquery-3.2.1.js' %}"></script>
+        <script src="{% static 'pizza/js/popper.min.js' %}" ></script>
+        <script src="{% static 'pizza/js/bootstrap.min.js'%}"></script>
+        <script src="{% static 'pizza/js/custom.js' %}"></script>
+	</body>
+</html>

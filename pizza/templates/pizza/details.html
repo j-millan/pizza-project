@@ -1,0 +1,31 @@
+{% extends "pizza/base.html" %}
+
+{% block title %}Details: {{ pizza.name }}{% endblock title %}
+
+{% block breadcrumb %}
+	<li class="breadcrumb-item">
+		<a href="{% url 'pizza:home' %}">Home</a>
+	</li>
+	<li class="breadcrumb-item">
+		<a href="{% url 'pizza:pizza_index' %}">Index</a>
+	</li>	
+	<li class="breadcrumb-item active">Details: {{ pizza.name }}</li>
+{% endblock breadcrumb %}
+				
+{% block content %}
+	<div class="container text-left">
+		<h2>{{ pizza.name }}</h2>
+		<small>Created by: <strong>{{ pizza.creator_name }}</strong> at {{ pizza.pub_date|date:"F d, Y, h:i A"}}</small>
+		<h5>Toppings:</h5>
+		<ul class="list-group list-group-flush">
+			{% for top in toppings %}
+				<li class="list-group-item w-auto">{{ top }}</li>
+			{% endfor %}
+		</ul>
+		<h5>Extra data:</h5>
+		<ul class="list-group list-group-flush">
+			<li class="list-group-item"><span class="main-text">Cooking:</span> {{ pizza.get_cooking_display }}</li>
+			<li class="list-group-item"><span class="main-text">Diameter/size:</span> {{ pizza.size }}(cm)</li>
+		</ul>
+	<div>
+{% endblock content %}

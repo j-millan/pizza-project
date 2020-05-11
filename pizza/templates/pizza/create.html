@@ -1,0 +1,35 @@
+{% extends "pizza/base.html" %}
+{% load widget_tweaks %}
+
+{% block title %}Create Pizza{% endblock title %}
+
+{% block breadcrumb %}
+	<li class="breadcrumb-item">
+		<a href="{% url 'pizza:home' %}">Home</a>
+	</li>
+	<li class="breadcrumb-item active">Create</li>		
+{% endblock breadcrumb %}
+
+{% block content %}
+	<h2>Create Pizza</h2>
+	<form method="POST">
+		<div class="form-container">
+			{% csrf_token %}
+			{% for field in form %}
+				<div class="form-group">
+					{{ field.label_tag }}
+					{% render_field field class="form-control form-control-sm" %}
+					{% if field.errors %}
+						{% for error in field.erors %}
+							<span class="help-block">{{ error }}</span>
+						{% endfor %}
+					{% endif %}
+				</div>
+			{% endfor %}
+			<button type="submit" class="btn btn-success">
+				Create
+			</button>
+		</button>
+	  </div>
+	</form>
+{% endblock content %}

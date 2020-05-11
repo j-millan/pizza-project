@@ -1,0 +1,155 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: hsl(20, 60%, 80%);
+    background-image: url(../img/pizza.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+h1, h2 {
+    font-weight: 400;
+    margin: 20px 20px;
+    color: hsl(0, 0%, 15%);
+}
+
+h1, .dropdown  {
+    display: inline-block;
+}
+
+h2 {
+    margin-bottom: 5px;
+}
+
+.dropdown {
+    margin-right: 20px;
+    right: 0;
+}
+
+.dropdown-menu {
+    background: hsla(20, 70%, 50%, 0.4); 
+    border-radius: 0 !important;
+}
+
+a.dropdown-item {
+    color: white;   
+    background: hsla(0, 0%, 0%, 0);
+}
+
+a.dropdown-item:hover{
+    background: hsla(20, 70%, 75%, 0.4);
+    color: hsl(25, 80%, 30%) !important;
+}
+
+.dropdown-divider {
+    width: 85%;
+    margin: 0 auto;
+    border: 1px solid hsla(20, 76%, 34%, 0.7) !important;
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: hsla(0, 0%, 33%, 0.45);
+    z-index: -1;
+}
+
+.navbar {
+    background: hsl(20, 70%, 50%);
+    padding: 5px 10px;
+}
+
+.nav-link, .navbar-brand {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-brand {
+    font-family: 'Prompt', sans-serif;
+}
+
+.navbar-brand:hover {
+    color: hsl(25, 80%, 30%);
+}
+
+.nav-link:hover {
+    color: hsl(0, 0%, 65%);
+}
+
+.breadcrumb {
+    background: hsla(0, 0%, 80%, 0.6);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.breadcrumb-item a {
+    color: hsl(20, 70%, 50%);
+}
+
+.list-group {
+    margin: 10px 30px;
+}
+
+.list-group-item {
+    background: hsla(0, 0%, 0%, 0);
+    border-color: hsla(0, 0%, 0%, 0.2);
+    font-family: 'Cabin Condensed', sans-serif;
+}
+
+.list-group-item:hover {
+    background: hsla(0, 0%, 80%, 0.4) !important;
+}
+
+.list-group-item h5{
+    color: hsl(0, 0%, 87%);
+    font-weight: 400;
+}
+
+.list-group-item small {
+    color: hsl(0, 0%, 27%) !important;
+    font-weight: 450;
+}
+
+.form-container {
+    max-width: 500px;
+    padding: 20px 40px;
+    justify-content: center;
+}
+
+.form-container button {
+    margin: 5px auto;
+}
+
+.container {
+    padding: 5px 30px;
+}
+
+.container h2 {
+    display: inline-block;
+    color: hsl(0, 0%, 15%);
+}
+
+.container h5 {
+    margin-left: 20px;
+}
+
+.container small {
+    color: hsl(0, 0%, 25%);
+    font-weight: 400;
+}
+
+.container .list-group {
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.main-text {
+    font-weight: 600;
+}
